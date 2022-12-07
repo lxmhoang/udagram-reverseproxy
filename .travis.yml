@@ -17,10 +17,10 @@ script:
   - docker --version # print the version for logging
   - docker build -t udagram-reverseproxy .
   # Tagging
-  - docker tag udagram-reverseproxy lxmhoang/udagram-reverseproxy:v1
+  - docker tag udagram-reverseproxy lxmhoang/udagram-reverseproxy:v2
   
 after_success:
 # Push
 # Assuming DOCKER_PASSWORD and DOCKER_USERNAME are set in the Travis repository settings
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker push lxmhoang/udagram-reverseproxy:v1 
+- docker push lxmhoang/udagram-reverseproxy:v2
